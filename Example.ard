@@ -1,0 +1,6 @@
+\func f : Nat -> Nat => \lam x => 0
+
+\data Unit | unit
+
+\data Bool | true | false
+
