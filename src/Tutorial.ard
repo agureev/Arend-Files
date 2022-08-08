@@ -1,0 +1,30 @@
+{- Ex 1 -}
+{- Higher infix number binds closer -}
+\data Nat | zero | suc Nat
+
+
+\func f1  (x y : Nat) => x
+\func  f2 : Nat => zero
+\func \infix 1 f3 (f : Nat -> Nat) (z : Nat) : Int => 0
+\func f4 : Nat => zero
+\func \infix 2 f5 => f1
+\func f6 => f4
+
+\func test => f1 f2 f3 f4 f5 f6
+
+\data Bool | true | false
+
+
+
+\func if (b : Bool) {A : \Type} (a a' : A) : A
+  \elim b
+    | true => a
+    | false => a'
+
+\func if' (b : Bool) (A : \Type) : A -> A -> A
+  \lam a => \lam a' =>
+   \elim b
+  | true => a
+  | false => a'
+
+
